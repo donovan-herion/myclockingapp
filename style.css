@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+}
+
+.padding {
+    padding: 20px 0px 0px;
+}
+
+.margin {
+    margin: 50px;
+}
+
+input {
+    width: 50vw;
+    height: 50px;
+    margin: 0 10vw;
+}
+
+.calcul {
+    width: 30vw;
+    height: 50px;
+    margin: 2vh 10vw;
+}
+
+.danger {
+    margin: 300px 0 50px;
+}
+
+
+
+.flex-down {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    text-align: center;
+    width: 33vw;
+    border-right: 2px black solid;
+}
+
+.middle {
+    text-align: center;
+    width: 33vw;
+    border-right: 2px black solid;
+}
+
+.right {
+    text-align: center;
+    width: 33vw;
+}
+
+.height {
+    height: 50px;
+    padding: 15px 0;
+}
