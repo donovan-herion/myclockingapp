@@ -10,7 +10,7 @@ h1 {
   margin: 50px;
 }
 
-input {
+.input {
   width: 50vw;
   height: 50px;
   margin: 0 10vw;
@@ -51,4 +51,12 @@ input {
 .height {
   height: 50px;
   padding: 15px 0;
+}
+
+.resultat {
+    width: 90vw;
+}
+
+.fermer {
+    width: 80vw;
 }

@@ -16,7 +16,7 @@ $bdd = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_7a112bc76d6
 
 if (isset($_POST['commencer'])) {
     $start = $bdd->prepare("INSERT INTO `commencer` (`commencer`) VALUES (?);");
-    $start->execute(array(date("Y-m-d H:i:s")));
+    $start->execute(array(date("Y-m-d H:i:s", strtotime('+2 hours'))));
     $_POST['commencer'] = NULL;
 }
 
@@ -24,14 +24,14 @@ if (isset($_POST['commencer'])) {
     
     if (isset($_POST['finir'])) {
         $finish = $bdd->prepare("INSERT INTO `finir` (`finir`) VALUES (?);");
-        $finish->execute(array(date("Y-m-d H:i:s")));
+        $finish->execute(array(date("Y-m-d H:i:s", strtotime('+2 hours'))));
         $_POST['finir'] = NULL;
 
 
         $tableau = $bdd->query("SELECT * FROM commencer ORDER BY commencer DESC LIMIT 1");
         while ($row = $tableau->fetch(PDO::FETCH_ASSOC)) {
           $strtotimecommencer = strtotime($row['commencer']); 
-          $strtotimefinir = strtotime(date("Y-m-d H:i:s"));
+          $strtotimefinir = strtotime(date("Y-m-d H:i:s", strtotime('+2 hours')));
          }
 
         
@@ -96,11 +96,11 @@ if ($nameOfDay == 'Monday') {
           $entreefinir = $bdd->query("SELECT * FROM finir");
           if ($entreecommencer->rowCount() == $entreefinir->rowCount()){ ?>
     <form action="" method="POST" class="margin d-flex justify-content-center">
-        <input class="btn btn-primary" type="submit" name="commencer" value="Commencer">
+        <input class="btn btn-primary input" type="submit" name="commencer" value="Commencer">
     </form>
     <?php } else { ?>
     <form action="" method="POST" class="margin d-flex justify-content-center">
-        <input class="btn btn-primary" type="submit" name="finir" value="Finir">
+        <input class="btn btn-primary input" type="submit" name="finir" value="Finir">
     </form>
     <?php }?>
     
@@ -134,7 +134,7 @@ if ($nameOfDay == 'Monday') {
                       
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary" value="Resultats"></input>
+                    <input type="submit" class="btn btn-primary resultat" value="Resultats"></input>
                     </form>
                 </div>
             </div>
@@ -174,7 +174,7 @@ if ($nameOfDay == 'Monday') {
                         <p style="font-weight: bold;"><?php echo $fulltimeadditiontotale;?></p>
 
                         <form action="" method="POST">
-                            <input class="btn btn-primary" type="submit" value="Fermer" name="fermer">
+                            <input class="btn btn-primary fermer" type="submit" value="Fermer" name="fermer">
                         </form>
                     </div>
                 </div>
@@ -231,7 +231,8 @@ if ($nameOfDay == 'Monday') {
     </div>
 
     <form action="" method="POST" class="d-flex justify-content-center">
-        <input class="btn btn-danger danger" type="submit" name="reset" value="Reset">
+        <input class="btn btn-danger danger" type="submit" name="reset" value="Reset" style="display: none;"> 
+        <!-- desactiver le display none pour reset la bdd -->
     </form>
 
     <!-- Fin recap des heures -->
