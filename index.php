@@ -1,6 +1,12 @@
 <?php
 
+// ba4ff18d681fdd login
 
+// 2a09e13a mdp
+
+// eu-cdbr-west-03.cleardb.net host name
+
+// heroku_7a112bc76d6b2fe db name
 
 #connexion a la base de donnees
 
@@ -142,8 +148,8 @@ if ($nameOfDay == 'Monday') {
         <?php $s = $_POST['start'];
         $e = $_POST['end'];
 
-        $scondition = $s . ' 00:00:00';
-        $econdition = $e . ' 23:59:59';
+        $scondition = $s . ' 02:00:00'; #la db est deux heures en avance
+        $econdition = $e . ' 23:59:59'; #impossible de faire $e +1 et 02:00:00
         
 
         $additiontotale = 0;
