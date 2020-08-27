@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+
 // ba4ff18d681fdd login
 
 // 2a09e13a mdp
@@ -53,6 +57,10 @@ if (isset($_POST['reset'])) {
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Cookie pour la connexion -->
+
+<?php if (isset($_COOKIE['login'])) { ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +69,8 @@ if (isset($_POST['reset'])) {
 </head>
 
 <body <?php if (isset($_POST['start'])) {echo 'class="modal-open"';}?> >
+
+<?php echo $_COOKIE['login']; ?>
 
     <!-- titre heures minutes secondes et nom du jour -->
 
@@ -72,7 +82,7 @@ if ($nameOfDay == 'Monday') {
     $nameOfDay = 'Mardi';
 } else if ($nameOfDay == 'Wednesday') {
     $nameOfDay = 'Mercredi';
-} else if ($nameOfDay == 'Thurday') {
+} else if ($nameOfDay == 'Thursday') {
     $nameOfDay = 'Jeudi';
 } else if ($nameOfDay == 'Friday') {
     $nameOfDay = 'Vendredi';
@@ -237,24 +247,35 @@ if ($nameOfDay == 'Monday') {
 
     <!-- Fin recap des heures -->
 
-    <script src="app.js"></script>
+    
+    <?php if (isset($_POST['start'])) {echo '<div class="modal-backdrop fade show"></div>';}?>
+    
+    <!-- fin du cookie -->
+    <?php } else {   ?>
+  
+        <form action="" method="POST" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 90vh">
+        <label for="mdp">Mot de passe :</label>    
+        <input id="mdp" type="text" value="" name="mdp" style="width: 80%; height: 50px;">
+        </form>
+        
+        <?php if (isset($_POST['mdp']) && $_POST['mdp'] == 'mdp') {
+            setcookie('login', 'x', time() + 365*24*3600);
+            header("Refresh:0");
+        } ?>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<?php if (isset($_POST['mdp']) && $_POST['mdp'] == 'demo') {
+            setcookie('login', 'x', time() + 10);
+            header("Refresh:0");
+        } ?>
+
+<?php } ?> 
+
+
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-<?php if (isset($_POST['start'])) {echo '<div class="modal-backdrop fade show"></div>';}?>
 
 </body>
 
 </html>
-
-
-
-<!-- ba4ff18d681fdd login
-
-2a09e13a mdp
-
-eu-cdbr-west-03.cleardb.net host name
-
-heroku_7a112bc76d6b2fe db name -->
