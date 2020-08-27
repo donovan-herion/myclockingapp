@@ -70,8 +70,6 @@ if (isset($_POST['reset'])) {
 
 <body <?php if (isset($_POST['start'])) {echo 'class="modal-open"';}?> >
 
-<?php echo $_COOKIE['login']; ?>
-
     <!-- titre heures minutes secondes et nom du jour -->
 
     <h1 class="padding"><?php $nameOfDay = date('l', strtotime(date("Y-m-d H:i:s")));
