@@ -252,7 +252,8 @@ if ($nameOfDay == 'Monday') {
     <?php } else {   ?>
   
         <form action="" method="POST" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 90vh">
-        <label for="mdp">Mot de passe :</label>    
+        <label style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 2em; font-weight: bold;" for="mdp">Mot de passe :</label>    
+        <br>
         <input id="mdp" type="text" value="" name="mdp" style="width: 80%; height: 50px;">
         </form>
         
@@ -262,7 +263,7 @@ if ($nameOfDay == 'Monday') {
         } ?>
 
 <?php if (isset($_POST['mdp']) && $_POST['mdp'] == 'demo') {
-            setcookie('login', 'x', time() + 10);
+            setcookie('login', 'x', time() + 120);
             header("Refresh:0");
         } ?>
 
