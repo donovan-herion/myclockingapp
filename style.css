@@ -2,6 +2,10 @@ h1 {
   text-align: center;
 }
 
+.buddy {
+  background-color: rgb(185, 196, 233);
+}
+
 .padding {
   padding: 20px 0px 0px;
 }
