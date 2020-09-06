@@ -72,7 +72,7 @@ if (isset($_POST['reset'])) {
 
     <!-- titre heures minutes secondes et nom du jour -->
 
-    <h1 class="padding"><?php $nameOfDay = date('l', strtotime(date("Y-m-d H:i:s")));
+    <h1 class="padding"><?php $nameOfDay = date('l', strtotime(date("Y-m-d H:i:s", strtotime('+2 hours'))));
 
 if ($nameOfDay == 'Monday') {
     $nameOfDay = 'Lundi';
