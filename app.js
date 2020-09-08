@@ -29,3 +29,15 @@ function refresh() {
     
     setInterval(refresh, 1000);
 
+
+    let subcommencer = document.querySelector('.dis-commencer')
+    let subfinir = document.querySelector('.dis-finir')
+
+    subcommencer.addEventListener('click', () => {
+        subcommencer.setAttribute('disabled', 'disabled')
+    })
+
+    subfinir.addEventListener('click', () => {
+        subfinir.setAttribute('disabled', 'disabled')
+    })
+

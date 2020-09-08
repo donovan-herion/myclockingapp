@@ -104,11 +104,11 @@ if ($nameOfDay == 'Monday') {
           $entreefinir = $bdd->query("SELECT * FROM finir");
           if ($entreecommencer->rowCount() == $entreefinir->rowCount()){ ?>
     <form action="" method="POST" class="margin d-flex justify-content-center">
-        <input class="btn btn-primary input" type="submit" name="commencer" value="Commencer">
+        <input class="dis-commencer btn btn-primary input" type="submit" name="commencer" value="Commencer">
     </form>
     <?php } else { ?>
     <form action="" method="POST" class="margin d-flex justify-content-center">
-        <input class="btn btn-primary input" type="submit" name="finir" value="Finir">
+        <input class="dis-finir btn btn-primary input" type="submit" name="finir" value="Finir">
     </form>
     <?php }?>
     
