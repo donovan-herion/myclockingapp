@@ -34,9 +34,8 @@ function refresh() {
         let subcommencer = document.querySelector('.dis-commencer')
         
         subcommencer.addEventListener('click', () => {
-            subcommencer.setAttribute('disabled', '')
-
-            console.log('disabled commencer')
+            subcommencer.style.display = 'none';
+            console.log('dis commencer')
         })
     }
 
@@ -44,8 +43,8 @@ function refresh() {
         let subfinir = document.querySelector('.dis-finir')
 
         subfinir.addEventListener('click', () => {
-            subfinir.setAttribute('disabled', '')
+            subfinir.style.display = 'none';
         })
-        console.log('disabled finir')
+        console.log('dis finir')
     }
 
