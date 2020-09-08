@@ -35,6 +35,8 @@ function refresh() {
         
         subcommencer.addEventListener('click', () => {
             subcommencer.setAttribute('disabled', 'disabled')
+
+            console.log('disabled commencer')
         })
     }
 
@@ -44,5 +46,6 @@ function refresh() {
         subfinir.addEventListener('click', () => {
             subfinir.setAttribute('disabled', 'disabled')
         })
+        console.log('disabled finir')
     }
 
