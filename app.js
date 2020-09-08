@@ -30,14 +30,19 @@ function refresh() {
     setInterval(refresh, 1000);
 
 
-    let subcommencer = document.querySelector('.dis-commencer')
-    let subfinir = document.querySelector('.dis-finir')
+    if (document.querySelector('.dis-commencer') != undefined) {
+        let subcommencer = document.querySelector('.dis-commencer')
+        
+        subcommencer.addEventListener('click', () => {
+            subcommencer.setAttribute('disabled', 'disabled')
+        })
+    }
 
-    subcommencer.addEventListener('click', () => {
-        subcommencer.setAttribute('disabled', 'disabled')
-    })
+    if (document.querySelector('.dis-finir') != undefined) {
+        let subfinir = document.querySelector('.dis-finir')
 
-    subfinir.addEventListener('click', () => {
-        subfinir.setAttribute('disabled', 'disabled')
-    })
+        subfinir.addEventListener('click', () => {
+            subfinir.setAttribute('disabled', 'disabled')
+        })
+    }
 
