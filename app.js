@@ -34,8 +34,7 @@ function refresh() {
         let subcommencer = document.querySelector('.dis-commencer')
         
         subcommencer.addEventListener('click', () => {
-            subcommencer.style.display = 'none';
-            console.log('dis commencer')
+            subcommencer.style.display = 'none'; //prevents user from submitting data multiple times
         })
     }
 
@@ -43,8 +42,7 @@ function refresh() {
         let subfinir = document.querySelector('.dis-finir')
 
         subfinir.addEventListener('click', () => {
-            subfinir.style.display = 'none';
+            subfinir.style.display = 'none'; //prevents user from submitting data multiple times
         })
-        console.log('dis finir')
     }
 
