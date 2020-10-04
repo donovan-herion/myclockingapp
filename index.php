@@ -72,24 +72,7 @@ if (isset($_POST['reset'])) {
 
     <!-- titre heures minutes secondes et nom du jour -->
 
-    <h1 class="padding"><?php $nameOfDay = date('l', strtotime(date("Y-m-d H:i:s", strtotime('+2 hours'))));
-
-if ($nameOfDay == 'Monday') {
-    $nameOfDay = 'Lundi';
-} else if ($nameOfDay == 'Tuesday') {
-    $nameOfDay = 'Mardi';
-} else if ($nameOfDay == 'Wednesday') {
-    $nameOfDay = 'Mercredi';
-} else if ($nameOfDay == 'Thursday') {
-    $nameOfDay = 'Jeudi';
-} else if ($nameOfDay == 'Friday') {
-    $nameOfDay = 'Vendredi';
-} else if ($nameOfDay == 'Saturday') {
-    $nameOfDay = 'Samedi';
-} else if ($nameOfDay == 'Sunday') {
-    $nameOfDay = 'Dimanche';
-}
-                        echo $nameOfDay; ?></h1>
+    <h1 class="padding"><?php $nameOfDay = date('l', strtotime(date("Y-m-d H:i:s", strtotime('+2 hours')))); echo $nameOfDay; ?></h1>
     <h1 class="padding">
         <span id="hour">-- :</span>
         <span id="minute">-- :</span>
@@ -104,18 +87,18 @@ if ($nameOfDay == 'Monday') {
           $entreefinir = $bdd->query("SELECT * FROM finir");
           if ($entreecommencer->rowCount() == $entreefinir->rowCount()){ ?>
     <form action="" method="POST" class="margin d-flex justify-content-center">
-        <input class="dis-commencer btn btn-primary input" type="submit" name="commencer" value="Commencer">
+        <input class="dis-commencer btn btn-primary input" type="submit" name="commencer" value="Start">
     </form>
     <?php } else { ?>
     <form action="" method="POST" class="margin d-flex justify-content-center">
-        <input class="dis-finir btn btn-primary input" type="submit" name="finir" value="Finir">
+        <input class="dis-finir btn btn-primary input" type="submit" name="finir" value="Stop">
     </form>
     <?php }?>
     
     <!-- Button trigger modal -->
     <div class="margin d-flex justify-content-center">
         <button type="button" class="calcul btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-            Mes Heures
+            Check Hours
         </button>
     </div>
         
@@ -125,7 +108,7 @@ if ($nameOfDay == 'Monday') {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Calculer mes heures</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Calculate total of hours</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -133,10 +116,10 @@ if ($nameOfDay == 'Monday') {
                 <div class="modal-body">
                     <form action="" method="POST">
                         <div class="d-flex align-items-center flex-column">
-                            <br><label for="start">Date de depart :</label>
+                            <br><label for="start">Starting date :</label>
                             <input type="date" name="start"><br>
                             
-                            <label for="end">Date de fin :</label>
+                            <label for="end">Ending date :</label>
                             <input type="date" name="end"><br>
                         </div>
                       
@@ -173,16 +156,16 @@ if ($nameOfDay == 'Monday') {
             
             <div class="modal-content">
                 <div class="modal-header header-modal">
-                    <h5>Mon total d'heures</h5><br>
+                    <h5>My total</h5><br>
                 </div>
                     <div class="modal-body text-center">
                         
-                        <p>Du <?php echo $s;?></p>
-                        <p>Au <?php echo $e;?> (inclus)</p>
+                        <p>From <?php echo $s;?></p>
+                        <p>To <?php echo $e;?> (included)</p>
                         <p style="font-weight: bold;"><?php echo $fulltimeadditiontotale;?></p>
 
                         <form action="" method="POST">
-                            <input class="btn btn-primary fermer" type="submit" value="Fermer" name="fermer">
+                            <input class="btn btn-primary fermer" type="submit" value="Close" name="fermer">
                         </form>
                     </div>
                 </div>
