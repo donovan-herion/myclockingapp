@@ -10,7 +10,7 @@
 
 #connexion a la base de donnees
 
-$bdd = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_7a112bc76d6b2fe;charset=utf8", "ba4ff18d681fdd", "2a09e13a");
+// $bdd = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_7a112bc76d6b2fe;charset=utf8", "ba4ff18d681fdd", "2a09e13a");
 
 #condition d'envoi a la bdd
 
