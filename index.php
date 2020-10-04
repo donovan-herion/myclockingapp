@@ -125,7 +125,7 @@ if (isset($_POST['reset'])) {
                       
                 </div>
                 <div class="modal-footer">
-                    <input type="submit" class="btn btn-primary resultat" value="Resultats"></input>
+                    <input type="submit" class="btn btn-primary resultat" value="Results"></input>
                     </form>
                 </div>
             </div>
@@ -180,7 +180,7 @@ if (isset($_POST['reset'])) {
         <div class="left">
 
             <?php $tableau = $bdd->query("SELECT * FROM commencer ORDER BY commencer DESC");?>
-             <p class="height">Debut</p> 
+             <p class="height">Start</p> 
             <?php while ($row = $tableau->fetch(PDO::FETCH_ASSOC)) { ?>
 
                 <!-- Ajouter date dans la colonne & augmenter le total de secondes dans commencer -->
@@ -194,7 +194,7 @@ if (isset($_POST['reset'])) {
         <div class="middle">
 
             <?php $tableau = $bdd->query("SELECT * FROM finir ORDER BY finir DESC");?>
-            <p class="height">Fin</p> 
+            <p class="height">End</p> 
             <?php while ($row = $tableau->fetch(PDO::FETCH_ASSOC)) { ?>
 
                 <!-- Ajouter date dans la colonne -->
