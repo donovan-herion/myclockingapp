@@ -1,16 +1,16 @@
 <?php
 
-// ba4ff18d681fdd login
+// b199f3ca4155d1 login
 
-// 2a09e13a mdp
+// bdd573ee mdp
 
 // eu-cdbr-west-03.cleardb.net host name
 
-// heroku_7a112bc76d6b2fe db name
+// heroku_622c901f7f2f05c db name
 
 #connexion a la base de donnees
 
-// $bdd = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_7a112bc76d6b2fe;charset=utf8", "ba4ff18d681fdd", "2a09e13a");
+$bdd = new PDO("mysql:host=eu-cdbr-west-03.cleardb.net;dbname=heroku_622c901f7f2f05c;charset=utf8", "b199f3ca4155d1", "bdd573ee");
 
 #condition d'envoi a la bdd
 
@@ -59,7 +59,7 @@ if (isset($_POST['reset'])) {
 
 <!-- Cookie pour la connexion -->
 
-<?php if (isset($_COOKIE['login'])) { ?>
+<?php ?>
 
 <head>
     <meta charset="UTF-8">
@@ -247,27 +247,6 @@ if ($nameOfDay == 'Monday') {
 
     
     <?php if (isset($_POST['start'])) {echo '<div class="modal-backdrop fade show"></div>';}?>
-    
-    <!-- fin du cookie -->
-    <?php } else {   ?>
-  
-        <form action="" method="POST" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 90vh">
-        <label style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 2em; font-weight: bold;" for="mdp">Mot de passe :</label>    
-        <br>
-        <input id="mdp" type="text" value="" name="mdp" style="width: 80%; height: 50px;">
-        </form>
-        
-        <?php if (isset($_POST['mdp']) && $_POST['mdp'] == 'mdp') {
-            setcookie('login', 'x', time() + 365*24*3600);
-            header("Refresh:0");
-        } ?>
-
-<?php if (isset($_POST['mdp']) && $_POST['mdp'] == 'demo') {
-            setcookie('login', 'x', time() + 120);
-            header("Refresh:0");
-        } ?>
-
-<?php } ?> 
 
 
 <script src="app.js"></script>
